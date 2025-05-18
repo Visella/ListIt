@@ -132,7 +132,6 @@
             android:contentDescription="Profile"
             app:tint="#2D3E27" />
 
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
