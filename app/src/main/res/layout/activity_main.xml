@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCE0CE"
+    tools:context=".MainActivity">
+
+    <!-- Share this list section -->
+    <LinearLayout
+        android:id="@+id/share_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#BFC6A3"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="#2D3E27" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share this list"
+            android:textColor="#2D3E27"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+
+    <!-- Grocery list -->
+    <LinearLayout
+        android:id="@+id/grocery_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/share_section"
+        app:layout_constraintBottom_toTopOf="@id/generate_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apples"/>
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bananas"/>
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bread"/>
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Carrots"/>
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Milk"/>
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Potatoes"/>
+    </LinearLayout>
+
+    <!-- Generate Recipe Button -->
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Generate recipe"
+        android:backgroundTint="#EEE9DA"
+        android:textColor="#2D3E27"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Add item section -->
+    <LinearLayout
+        android:id="@+id/add_item_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/share_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/input_item"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Add grocery item"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#2D3E27"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <!-- Bottom navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#EEE9DA"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/list"
+            android:layout_weight="1"
+            android:contentDescription="Grocery List"
+            app:tint="#2D3E27" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/profile"
+            android:layout_weight="1"
+            android:contentDescription="Profile"
+            app:tint="#2D3E27" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
