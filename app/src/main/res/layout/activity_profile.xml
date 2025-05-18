@@ -80,15 +80,15 @@
 
     <TextView
         android:id="@+id/email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="20dp"
         android:layout_marginTop="276dp"
         android:text="Email"
         android:textColor="#DCE0CE"
         android:textSize="16sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

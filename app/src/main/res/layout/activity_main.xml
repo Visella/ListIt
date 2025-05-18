@@ -117,6 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
+
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/list"
@@ -125,6 +126,7 @@
             app:tint="#2D3E27" />
 
         <ImageView
+            android:id="@+id/profile_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/profile"
