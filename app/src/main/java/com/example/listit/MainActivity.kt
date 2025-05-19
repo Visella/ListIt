@@ -42,25 +42,29 @@ open class MainActivity : AppCompatActivity() {
 
         val request = RecipeRequest(type = "ingredients", input = "telur, susu, tepung")
 
-        RetrofitClient.instance.generateRecipe(request)
-            .enqueue(object : retrofit2.Callback<RecipeResponse> {
-                override fun onResponse(call: retrofit2.Call<RecipeResponse>, response: Response<RecipeResponse>) {
-                    if (response.isSuccessful) {
-                        val recipe = response.body()?.recipe
-                        binding.titleTextView.text = recipe?.title ?: "No title"
-                        binding.ingredientsTextView.text = recipe?.ingredients?.joinToString("\n") ?: "No ingredients"
-                        binding.instructionsTextView.text = recipe?.instructions?.joinToString("\n") ?: "No instructions"
-                        Toast.makeText(this@MainActivity, "Congratz! Recipe generated successfully!", Toast.LENGTH_SHORT).show()
-                    }
-                    else {
-                        Log.e("API", "Gagal: ${response.code()} - ${response.errorBody()?.string()}")
-                    }
-                }
 
-                override fun onFailure(call: retrofit2.Call<RecipeResponse>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "Failed: ${t.message}", Toast.LENGTH_SHORT).show()
-                }
-            })
+        binding.generateButton.setOnClickListener {
+            RetrofitClient.instance.generateRecipe(request)
+                .enqueue(object : retrofit2.Callback<RecipeResponse> {
+                    override fun onResponse(call: retrofit2.Call<RecipeResponse>, response: Response<RecipeResponse>) {
+                        if (response.isSuccessful) {
+                            val recipe = response.body()?.recipe
+                            binding.titleTextView.text = recipe?.title ?: "No title"
+                            binding.ingredientsTextView.text = recipe?.ingredients?.joinToString("\n") ?: "No ingredients"
+                            binding.instructionsTextView.text = recipe?.instructions?.joinToString("\n") ?: "No instructions"
+                            Toast.makeText(this@MainActivity, "Congratz! Recipe generated successfully!", Toast.LENGTH_SHORT).show()
+                        }
+                        else {
+                            Log.e("API", "Gagal: ${response.code()} - ${response.errorBody()?.string()}")
+                        }
+                    }
+
+                    override fun onFailure(call: retrofit2.Call<RecipeResponse>, t: Throwable) {
+                        Toast.makeText(this@MainActivity, "Failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
+        }
+
 
 
     }
