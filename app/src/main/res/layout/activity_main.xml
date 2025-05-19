@@ -55,6 +55,35 @@
         <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Carrots"/>
         <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Milk"/>
         <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Potatoes"/>
+
+        <TextView
+            android:id="@+id/result_generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hasil Dari Generate"
+            android:textColor="#2D3E27"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title" />
+
+        <TextView
+            android:id="@+id/ingredientsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients" />
+
+        <TextView
+            android:id="@+id/instructionsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instructions" />
+
+
     </LinearLayout>
 
     <!-- Generate Recipe Button -->
