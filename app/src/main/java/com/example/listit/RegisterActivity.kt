@@ -40,6 +40,12 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.backButton.setOnClickListener {
+            auth.signOut()
+            finishAffinity()
+            System.exit(0)
+        }
+
     }
 
     private fun handleSignUp(name: String, email: String, password: String) {

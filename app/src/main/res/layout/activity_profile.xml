@@ -171,5 +171,17 @@
         app:layout_constraintTop_toBottomOf="@+id/input_comfirm_password" />
 
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:backgroundTint="#36402E"
+        android:text="Logout"
+        android:textColor="#DCE0CE"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

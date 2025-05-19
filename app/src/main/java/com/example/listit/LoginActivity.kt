@@ -34,6 +34,13 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
+        binding.backButton.setOnClickListener {
+            auth.signOut()
+            finishAffinity()
+            System.exit(0)
+        }
+
     }
 
     private fun handleLogin(email: String, password: String) {
