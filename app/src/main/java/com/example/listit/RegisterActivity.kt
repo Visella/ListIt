@@ -94,8 +94,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun clearFields() {
-        binding.inputName.text.clear()
-        binding.inputEmail.text.clear()
-        binding.inputPassword.text.clear()
+        binding.inputName.text?.clear()
+        binding.inputEmail.text?.clear()
+        binding.inputPassword.text?.clear()
     }
 }

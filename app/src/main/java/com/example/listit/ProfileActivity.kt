@@ -59,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.updateProfileButton.setOnClickListener {
             val oldPassword = binding.inputOldPassword.text.toString()
             val newPassword = binding.inputNewPassword.text.toString()
-            val confirmPassword = binding.inputComfirmPassword.text.toString()
+            val confirmPassword = binding.inputConfirmPassword.text.toString()
 
             if (oldPassword.isEmpty() || newPassword.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Semua kolom harus diisi", Toast.LENGTH_SHORT).show()

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "26139779545",
-    "project_id": "listitproject-2",
-    "storage_bucket": "listitproject-2.firebasestorage.app"
+    "project_number": "725041078875",
+    "project_id": "listit-5f7d1",
+    "storage_bucket": "listit-5f7d1.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:26139779545:android:15182be7c7d2868cdd39c8",
+        "mobilesdk_app_id": "1:725041078875:android:cfb5e2ec7b68558388957e",
         "android_client_info": {
           "package_name": "com.example.listit"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAGIvHe8irXTgx_mM5_fBqYNSctT5W0XyE"
+          "current_key": "AIzaSyCEmvVja5b4V54Sl9lxeMvq_EtaTDflzZk"
         }
       ],
       "services": {
