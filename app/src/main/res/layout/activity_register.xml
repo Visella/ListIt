@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,107 +13,174 @@
         android:id="@+id/back_button"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@android:drawable/ic_media_previous"
+        android:layout_margin="24dp"
         android:contentDescription="Back"
-        app:tint="#DCE0CE"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/baseline_person_24"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="24dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#DCE0CE" />
 
     <!-- Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:layout_marginTop="64dp"
+        android:text="Create Account"
+        android:textColor="#DCE0CE"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="#DCE0CE"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="64dp" />
-
-
-    <!-- Name Field -->
-    <EditText
-        android:id="@+id/input_name"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="120dp"
-        android:backgroundTint="#36402E"
-        android:hint="Username"
-        android:inputType="text"
-        android:padding="12dp"
-        android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Email Field -->
-    <EditText
-        android:id="@+id/input_email"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#36402E"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="12dp"
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Join us and start creating your grocery lists"
         android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
+        android:textSize="16sp"
+        android:alpha="0.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_name" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/input_password"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#36402E"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_email" />
-
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/signup_button"
+    <!-- Registration Form Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/registration_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="48dp"
-        android:backgroundTint="#DCE0CE"
-        android:text="SignUp"
-        android:textColor="#5A6343"
-        android:textStyle="bold"
+        app:cardBackgroundColor="#36402E"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+        app:layout_constraintTop_toBottomOf="@id/subtitle">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Username Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Username"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Email"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Password"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Terms and Conditions Checkbox -->
+            <CheckBox
+                android:id="@+id/terms_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="#DCE0CE"
+                android:text="I agree to the Terms and Conditions"
+                android:textColor="#DCE0CE" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Sign Up Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signup_button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#DCE0CE"
+        android:text="Create Account"
+        android:textColor="#5A6343"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_card" />
+
+    <!-- Login Link -->
     <TextView
         android:id="@+id/go_to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="Already have an account? Login"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textColor="#DCE0CE"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

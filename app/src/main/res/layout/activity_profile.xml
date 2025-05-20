@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,179 +8,240 @@
     android:layout_height="match_parent"
     android:background="#5A6343">
 
-    <!-- Back Button -->
+    <!-- Top Bar with Back Button and Logout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="24dp"
+            android:contentDescription="Back"
+            android:src="@drawable/baseline_person_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#DCE0CE" />
 
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@android:drawable/ic_media_previous"
-        android:contentDescription="Back"
-        app:tint="#DCE0CE"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="24dp" />
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="#36402E"
+            android:paddingHorizontal="16dp"
+            android:text="Logout"
+            android:textColor="#DCE0CE"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Page"
+        android:layout_marginTop="24dp"
+        android:text="Profile"
+        android:textColor="#DCE0CE"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="#DCE0CE"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="64dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:text="Username"
-        android:textColor="#DCE0CE"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/top_bar" />
 
-    <TextView
-        android:id="@+id/username_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:text="Username"
-        android:textColor="#DCE0CE"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:text="Email"
-        android:textColor="#DCE0CE"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/email_text"
-        android:layout_width="74dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="276dp"
-        android:text="Email"
-        android:textColor="#DCE0CE"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
-        android:text="Change password"
-        android:textColor="#DCE0CE"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/input_old_password"
+    <!-- Profile Info Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_info_card"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="292dp"
-        android:backgroundTint="#36402E"
-        android:hint="Old Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#36402E"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title">
 
-    <EditText
-        android:id="@+id/input_new_password"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Username Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#DCE0CE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/username_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Username"
+                android:textColor="#DCE0CE"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="8dp"
+                android:background="#4ADCE0CE" />
+
+            <!-- Email Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                android:textColor="#DCE0CE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="user@example.com"
+                android:textColor="#DCE0CE"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Change Password Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/change_password_card"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#36402E"
-        android:hint="New Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
+        app:cardBackgroundColor="#36402E"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_old_password" />
+        app:layout_constraintTop_toBottomOf="@id/profile_info_card">
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/input_comfirm_password"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#36402E"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColor="#DCE0CE"
-        android:textColorHint="#DCE0CE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_new_password" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <!-- Save Button -->
-    <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Change Password"
+                android:textColor="#DCE0CE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Old Password Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Old Password"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_old_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- New Password Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="New Password"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_new_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Confirm Password Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Confirm Password"
+                android:textColorHint="#AADCE0CE"
+                app:boxBackgroundColor="#2ADCE0CE"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#DCE0CE"
+                app:hintTextColor="#DCE0CE"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#DCE0CE">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#DCE0CE" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Update Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/update_profile_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
-        android:layout_marginTop="48dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#DCE0CE"
         android:text="Update Password"
         android:textColor="#5A6343"
+        android:textSize="16sp"
         android:textStyle="bold"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_comfirm_password" />
-
-
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="14dp"
-        android:backgroundTint="#36402E"
-        android:text="Logout"
-        android:textColor="#DCE0CE"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/change_password_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
